@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+    ... App Default Color Set (recommanded link :https://www.materialpalette.com/)
+    ... ColorPrimaryDark and ColorPrimary has offset(gap) 200 in materialdesign guideline
+    -->
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryLight">#FFECB3</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="colorHighlight">#00BCD4</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#727272</color>
+    <color name="colorDivider">#B6B6B6</color>
+
+    <color name="default_background">#F5F5F5</color>
+    <color name="default_white_background">#F5F5F5</color>
+    <color name="detail_background">#0096a6</color>
+
+    <color name="black_alpha_87">#de000000</color>
+    <color name="black_alpha_54">#8a000000</color>
+    <color name="black_alpha_26">#42000000</color>
+    <color name="black_alpha_12">#1F000000</color>
+
+    <color name="white_alpha_87">#deffffff</color>
+    <color name="white_alpha_54">#8affffff</color>
+    <color name="white_alpha_26">#42ffffff</color>
+    <color name="white_alpha_12">#1Fffffff</color>
+
+</resources>

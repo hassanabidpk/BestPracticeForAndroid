@@ -1,6 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- We should make a value-ko for various location device-->
+
+    <!-- app info-->
     <string name="app_name">BestPracticeForAndroid</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <!-- nav text -->
+    <string name="description_userimage">User Image</string>
+    <string name="home">Home</string>
+    <string name="item1">Item1</string>
+    <string name="item2">Item2</string>
+    <string name="setting">Setting</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

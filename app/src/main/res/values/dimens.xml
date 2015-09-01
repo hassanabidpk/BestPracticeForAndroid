@@ -2,4 +2,31 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--increments-->
+    <dimen name="appbar_half">28dp</dimen>
+    <dimen name="appbar">56dp</dimen>
+    <dimen name="appbar_x2">112dp</dimen>
+    <dimen name="appbar_x3">168dp</dimen>
+    <dimen name="appbar_x4">224dp</dimen>
+    <dimen name="appbar_x6">336dp</dimen>
+
+    <!--key lines-->
+    <dimen name="baseline_grid">8dp</dimen>
+    <dimen name="baseline_grid_for_text">4dp</dimen>
+    <dimen name="keyline_first">16dp</dimen>
+    <dimen name="keyline_second">72dp</dimen>
+    <dimen name="keyline_third">16dp</dimen>
+    <dimen name="keyline_first_minus">8dp</dimen>
+
+    <!--typo-->
+    <dimen name="content_headline_24sp">24sp</dimen>
+    <dimen name="content_title_20sp">20sp</dimen>
+    <dimen name="content_subtitle_16sp">16sp</dimen>
+    <dimen name="content_body_14sp">14sp</dimen>
+    <dimen name="content_caption_12sp">12sp</dimen>
+
+    <!--navigation drawer-->
+    <dimen name="navdrawer_profile_image_size">40dp</dimen>
+
 </resources>
