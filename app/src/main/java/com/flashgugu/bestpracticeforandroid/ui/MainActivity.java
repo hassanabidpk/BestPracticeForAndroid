@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayUseLogoEnabled(false);
             actionBar.setHomeButtonEnabled(true);
             actionBar.setTitle(getString(R.string.home));
-
         }
 
         actionBarDrawerToggle.syncState();
