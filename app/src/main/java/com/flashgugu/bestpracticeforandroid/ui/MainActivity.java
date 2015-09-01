@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
-        ActionBar actionBar = getSupportActionBar();
-
         // This code is used for Animation of DrawerArrow
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.open, R.string.close) {
             @Override
@@ -61,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         };
 
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+        ActionBar actionBar = getSupportActionBar();
 
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
