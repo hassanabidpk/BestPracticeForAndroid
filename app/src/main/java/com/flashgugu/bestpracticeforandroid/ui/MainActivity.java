@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,8 +20,10 @@ import com.flashgugu.bestpracticeforandroid.helper.GlideCircleTransformHelper;
 public class MainActivity extends AppCompatActivity {
 
     //We should naming "m"+valuename for membervalues
-
     private DrawerLayout mDrawerLayout;
+
+    //TAG value is log identifier
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initToolbar() {
         //We can naming free for localvalues
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onDrawerOpened(drawerView);
                 invalidateOptionsMenu();
                 syncState();
+                Log.d(TAG, "onDrawerOpened");
             }
 
             @Override
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onDrawerClosed(drawerView);
                 invalidateOptionsMenu();
                 syncState();
+                Log.d(TAG, "onDrawerClosed");
             }
         };
 
@@ -72,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         actionBarDrawerToggle.syncState();
-
     }
 
     private void initNavigationView() {
