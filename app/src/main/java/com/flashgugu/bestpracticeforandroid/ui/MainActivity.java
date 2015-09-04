@@ -5,12 +5,12 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
 
     //We should naming "m"+valuename for membervalues
     private DrawerLayout mDrawerLayout;
+    public static ActionBarDrawerToggle actionBarDrawerToggle;
 
     //TAG value is log identifier
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -46,8 +47,7 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
     }
 
     private void initView() {
-        selectFragment = HomeFragment.newInstance(getResources().getString(R.string.home));
-        showFragment(selectFragment);
+        goToHome();
 
         initNavigationView();
         initToolbar();
@@ -55,11 +55,9 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
 
     private void initToolbar() {
         //We can naming free for localvalues
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
 
         // This code is used for Animation of DrawerArrow
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.open, R.string.close) {
+       actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -76,17 +74,6 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
         };
 
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
-
-        ActionBar actionBar = getSupportActionBar();
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setDisplayShowHomeEnabled(true);
-            actionBar.setDisplayShowTitleEnabled(true);
-            actionBar.setDisplayUseLogoEnabled(false);
-            actionBar.setHomeButtonEnabled(true);
-            actionBar.setTitle(getString(R.string.home));
-        }
 
         actionBarDrawerToggle.syncState();
     }
@@ -159,14 +146,36 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
         });
     }
 
-    private void showFragment(Fragment selectFragment) {
+    public void showFragment(Fragment selectFragment) {
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_content_container, selectFragment);
         fragmentTransaction.addToBackStack(null).commit();
     }
 
+    public void goToHome() {
+        selectFragment = HomeFragment.newInstance(getResources().getString(R.string.home));
+        showFragment(selectFragment);
+    }
+
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        goToHome();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

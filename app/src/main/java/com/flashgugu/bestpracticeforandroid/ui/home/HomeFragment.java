@@ -1,12 +1,16 @@
 package com.flashgugu.bestpracticeforandroid.ui.home;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.flashgugu.bestpracticeforandroid.R;
 import com.flashgugu.bestpracticeforandroid.ui.BestPracticeFragment;
+import com.flashgugu.bestpracticeforandroid.ui.MainActivity;
 
 public class HomeFragment extends BestPracticeFragment {
 
@@ -47,7 +51,27 @@ public class HomeFragment extends BestPracticeFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        initToolbar(rootView);
+
+        return rootView;
+    }
+
+    public void initToolbar(View rootView) {
+        Toolbar toolbar = (Toolbar)rootView.findViewById(R.id.home_toolbar);
+        toolbar.setTitle(mTitle);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(true);
+            actionBar.setDisplayUseLogoEnabled(false);
+            actionBar.setHomeButtonEnabled(true);
+        }
+        MainActivity.actionBarDrawerToggle.syncState();
     }
 }
