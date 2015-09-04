@@ -52,6 +52,10 @@ public class HomeFragment extends BestPracticeFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        /**
+         * Write your viewlogic
+         */
+
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         initToolbar(rootView);
@@ -67,10 +71,6 @@ public class HomeFragment extends BestPracticeFragment {
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setDisplayShowHomeEnabled(true);
-            actionBar.setDisplayShowTitleEnabled(true);
-            actionBar.setDisplayUseLogoEnabled(false);
-            actionBar.setHomeButtonEnabled(true);
         }
         MainActivity.actionBarDrawerToggle.syncState();
     }
