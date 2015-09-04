@@ -19,6 +19,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.flashgugu.bestpracticeforandroid.R;
 import com.flashgugu.bestpracticeforandroid.helper.GlideCircleTransformHelper;
+import com.flashgugu.bestpracticeforandroid.ui.home.HomeFragment;
+import com.flashgugu.bestpracticeforandroid.ui.item1.Item1Fragment;
+import com.flashgugu.bestpracticeforandroid.ui.item2.Item2Fragment;
 
 public class MainActivity extends AppCompatActivity implements BestPracticeFragment.OnFragmentInteractionListener {
 
