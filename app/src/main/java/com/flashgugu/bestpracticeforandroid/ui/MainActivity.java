@@ -1,13 +1,16 @@
 package com.flashgugu.bestpracticeforandroid.ui;
 
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,7 +20,7 @@ import com.bumptech.glide.Glide;
 import com.flashgugu.bestpracticeforandroid.R;
 import com.flashgugu.bestpracticeforandroid.helper.GlideCircleTransformHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BestPracticeFragment.OnFragmentInteractionListener {
 
     //We should naming "m"+valuename for membervalues
     private DrawerLayout mDrawerLayout;
@@ -25,15 +28,24 @@ public class MainActivity extends AppCompatActivity {
     //TAG value is log identifier
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    private Fragment selectFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        fragmentManager = getSupportFragmentManager();
+
         initView();
     }
 
     private void initView() {
+        selectFragment = HomeFragment.newInstance(getResources().getString(R.string.home));
+        showFragment(selectFragment);
+
         initNavigationView();
         initToolbar();
     }
@@ -48,17 +60,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                invalidateOptionsMenu();
+
                 syncState();
-                Log.d(TAG, "onDrawerOpened");
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                invalidateOptionsMenu();
+
                 syncState();
-                Log.d(TAG, "onDrawerClosed");
             }
         };
 
@@ -112,21 +122,48 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_home:
+                        selectFragment = HomeFragment.newInstance(getResources().getString(R.string.home));
+
                         break;
 
                     case R.id.nav_item1:
+                        selectFragment = Item1Fragment.newInstance(getResources().getString(R.string.item1));
+
                         break;
 
                     case R.id.nav_item2:
+                        selectFragment = Item2Fragment.newInstance(getResources().getString(R.string.item2));
+
                         break;
 
                     case R.id.nav_setting:
                         break;
+
+                    default:
+                        try {
+                            throw new Exception("Not Identified NavSelect Exception");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        break;
                 }
+                showFragment(selectFragment);
                 menuItem.setChecked(true);
                 mDrawerLayout.closeDrawers();
                 return true;
             }
         });
+    }
+
+    private void showFragment(Fragment selectFragment) {
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.main_content_container, selectFragment);
+        fragmentTransaction.addToBackStack(null).commit();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
