@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- We should make a value-ko for various location device-->
 
     <!-- app info-->
     <string name="app_name">BestPracticeForAndroid</string>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="none">
+    <group android:id="@+id/drawer_view_firstgroup"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_dashboard_black_24dp"
@@ -14,6 +15,12 @@
             android:id="@+id/nav_item2"
             android:icon="@drawable/ic_question_answer_black_24dp"
             android:title="@string/item2" />
+    </group>
+
+    <!-- When groupid be changeded, draw divider line -->
+
+    <group android:id="@+id/drawer_view_secondgroup"
+        android:checkableBehavior="none">
         <item
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_settings_black_24dp"
