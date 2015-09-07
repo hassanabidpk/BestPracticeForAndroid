@@ -52,19 +52,22 @@ public class Item1Fragment extends BestPracticeFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        return inflater.inflate(R.layout.fragment_item1, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
         /**
          * Write your viewlogic
          */
 
-        View rootView = inflater.inflate(R.layout.fragment_item1, container, false);
-
-        initToolbar(rootView);
-
-        return rootView;
+        initToolbar();
     }
 
-    public void initToolbar(View rootView) {
-        Toolbar toolbar = (Toolbar)rootView.findViewById(R.id.item1_toolbar);
+    public void initToolbar() {
+        Toolbar toolbar = (Toolbar)getView().findViewById(R.id.item1_toolbar);
         toolbar.setTitle(mTitle);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 

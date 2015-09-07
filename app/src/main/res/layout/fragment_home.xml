@@ -14,7 +14,9 @@
         android:theme="@style/ActionBarTheme" />
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/home_textview"
+        android:layout_width="match_parent" android:layout_height="match_parent"
         android:text="@string/home" />
 
 </LinearLayout>

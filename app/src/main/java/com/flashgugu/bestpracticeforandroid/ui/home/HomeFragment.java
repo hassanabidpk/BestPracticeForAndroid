@@ -7,10 +7,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.flashgugu.bestpracticeforandroid.R;
 import com.flashgugu.bestpracticeforandroid.ui.BestPracticeFragment;
 import com.flashgugu.bestpracticeforandroid.ui.MainActivity;
+
+import org.w3c.dom.Text;
 
 public class HomeFragment extends BestPracticeFragment {
 
@@ -52,23 +55,29 @@ public class HomeFragment extends BestPracticeFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
         /**
          * Write your viewlogic
          */
 
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        initToolbar();
 
-        initToolbar(rootView);
-
-        return rootView;
+        TextView textView = (TextView)getView().findViewById(R.id.home_textview);
+        textView.setText("Success in onActivityCreated");
     }
 
-    public void initToolbar(View rootView) {
-        Toolbar toolbar = (Toolbar)rootView.findViewById(R.id.home_toolbar);
+    public void initToolbar() {
+        Toolbar toolbar = (Toolbar) getView().findViewById(R.id.home_toolbar);
         toolbar.setTitle(mTitle);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 
-        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
