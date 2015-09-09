@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- We should make a value-ko for various location device-->
 
+    <!-- We should make a value-ko for various location device-->
     <!-- app info-->
     <string name="app_name">BestPracticeForAndroid</string>
 
@@ -13,4 +13,5 @@
     <string name="setting">설정</string>
     <string name="open">사이드 메뉴 열림</string>
     <string name="close">사이드 메뉴 닫힘</string>
+
 </resources>

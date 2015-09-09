@@ -1,9 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Write about widget styling code in styles.xml  -->
+    <style name="ToolbarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/colorPrimary</item> <!-- Toolbar Background color -->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item> <!-- Toolbar Text Color-->
+    </style>
 
-    <style name="MyTheme.DrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
-        <item name="color">@color/textColorPrimary</item> <!-- Toolbar Navigation HomeButton Color-->
+    <style name="MyDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/textColorPrimary</item> <!-- Toolbar Navigation Hamburger and Arrow Color-->
     </style>
 
 </resources>

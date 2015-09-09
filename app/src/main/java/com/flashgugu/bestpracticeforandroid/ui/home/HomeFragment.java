@@ -7,13 +7,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.flashgugu.bestpracticeforandroid.R;
 import com.flashgugu.bestpracticeforandroid.ui.BestPracticeFragment;
 import com.flashgugu.bestpracticeforandroid.ui.MainActivity;
-
-import org.w3c.dom.Text;
 
 public class HomeFragment extends BestPracticeFragment {
 
@@ -67,9 +64,6 @@ public class HomeFragment extends BestPracticeFragment {
          */
 
         initToolbar();
-
-        TextView textView = (TextView)getView().findViewById(R.id.home_textview);
-        textView.setText("Success in onActivityCreated");
     }
 
     public void initToolbar() {
