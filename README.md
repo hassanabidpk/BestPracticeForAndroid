@@ -1,5 +1,4 @@
 # BestPracticeForAndroid
-BestPracticeForAndroid for WKH
 
 ##recommanded link :
 
