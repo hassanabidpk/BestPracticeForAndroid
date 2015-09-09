@@ -17,7 +17,6 @@ public class HomeFragment extends BestPracticeFragment {
     private final String TAG = HomeFragment.class.getSimpleName();
 
     private static final String KEY_TITLE = "title";
-
     private CharSequence mTitle;
 
     /**

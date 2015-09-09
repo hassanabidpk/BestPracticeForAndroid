@@ -24,6 +24,7 @@ import com.flashgugu.bestpracticeforandroid.ui.item2.Item2Fragment;
 
 public class MainActivity extends AppCompatActivity implements BestPracticeFragment.OnFragmentInteractionListener {
 
+
     //We should naming "m"+valuename for membervalues
     private DrawerLayout mDrawerLayout;
     public static ActionBarDrawerToggle actionBarDrawerToggle;
@@ -45,14 +46,14 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
         initView();
     }
 
-    private void initView() {
+    public void initView() {
         goToHome();
 
         initNavigationView();
         initToolbar();
     }
 
-    private void initToolbar() {
+    public void initToolbar() {
         //We can naming free for localvalues
 
         // This code is used for Animation of DrawerArrow
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
         actionBarDrawerToggle.syncState();
     }
 
-    private void initNavigationView() {
+    public void initNavigationView() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.main_nav_view);
 
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
         setUserInfo();
     }
 
-    private void setUserInfo() {
+    public void setUserInfo() {
         ImageView avatarImage = (ImageView) findViewById(R.id.user_image);
         TextView nameText = (TextView) findViewById(R.id.user_name);
 
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
         nameText.setText("Ace Kim");
     }
 
-    private void setupDrawerContent(NavigationView navigationView) {
+    public void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -151,9 +152,11 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
         fragmentTransaction.addToBackStack(null).commit();
     }
 
-    public void goToHome() {
+    public HomeFragment goToHome() {
         selectFragment = HomeFragment.newInstance(getResources().getString(R.string.home));
         showFragment(selectFragment);
+
+        return (HomeFragment)selectFragment;
     }
 
     @Override
