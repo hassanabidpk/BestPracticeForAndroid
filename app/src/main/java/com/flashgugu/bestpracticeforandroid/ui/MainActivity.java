@@ -98,11 +98,11 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
          */
 
         Glide.with(getApplicationContext())
-                .load("https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/10426818_298699680298861_6964286880340337220_n.jpg?oh=558c634bf659aabb4dcd3f3a358b74a9&oe=56800343&__gda__=1450909156_e6b74805f182808291d8b7f89755f0c4")
+                .load("https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xft1/v/t1.0-1/c144.112.815.815/s160x160/10009338_815132388514156_260385636_n.jpg?oh=19ccda918cb457fccb4df10915e12461&oe=56768A7E&__gda__=1453832943_e0256297712e3001006d95ed0bfe047f")
                 .transform(new GlideCircleTransformHelper(getApplicationContext()))
                 .into(avatarImage);
 
-        nameText.setText("Kahye");
+        nameText.setText("Ace Kim");
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
