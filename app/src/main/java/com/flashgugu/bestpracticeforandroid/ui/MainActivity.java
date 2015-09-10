@@ -1,5 +1,6 @@
 package com.flashgugu.bestpracticeforandroid.ui;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import com.flashgugu.bestpracticeforandroid.helper.GlideCircleTransformHelper;
 import com.flashgugu.bestpracticeforandroid.ui.home.HomeFragment;
 import com.flashgugu.bestpracticeforandroid.ui.item1.Item1Fragment;
 import com.flashgugu.bestpracticeforandroid.ui.item2.Item2Fragment;
+import com.flashgugu.bestpracticeforandroid.ui.setting.SettingActivity;
 
 public class MainActivity extends AppCompatActivity implements BestPracticeFragment.OnFragmentInteractionListener {
 
@@ -127,6 +129,8 @@ public class MainActivity extends AppCompatActivity implements BestPracticeFragm
                         break;
 
                     case R.id.nav_setting:
+                        Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
+                        startActivity(intent);
                         break;
 
                     default:

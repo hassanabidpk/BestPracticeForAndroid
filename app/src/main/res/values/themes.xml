@@ -10,4 +10,15 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="drawerArrowStyle">@style/MyDrawerArrowToggle</item>
     </style>
+
+    <style name="BestPracticeAppTheme.SettingsTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- preferenceTheme is neccessary attribute for PreferenceFragmentCompat -->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <!-- This is set font size of prefernence contents -->
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
