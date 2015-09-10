@@ -1,5 +1,9 @@
 # BestPracticeForAndroid
 
+## Object
+
+## implements
+
 ##recommanded link :
 
 - [Github for Android](https://github.com/pockethub/PocketHub)
