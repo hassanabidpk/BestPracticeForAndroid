@@ -18,6 +18,12 @@
     <string name="pref_noti_category">알람</string>
     <string name="pref_noti">알람 설정</string>
     <string name="pref_noti_cycletime">알람 주기</string>
-    <string name="pref_summary_noti_cycletime">10분마다 알람이 울립니</string>
+    <string name="pref_summary_noti_cycletime">10분마다 알람이 울립니다</string>
+
+    <string name="pref_aboutus_category">제작자</string>
+    <string name="pref_aboutus">개발자들</string>
+    <string name="pref_summ_aboutus">김종찬 / 박규환 / 위가혜</string>
+    <string name="pref_github">프로젝트 저장소 보기</string>
+    <string name="pref_summ_github">https://github.com/Acegugu/BestPracticeForAndroid</string>
 
 </resources>
