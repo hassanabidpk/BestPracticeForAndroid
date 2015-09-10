@@ -12,9 +12,6 @@
     <string name="setting">Setting</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="title_activity_setting">SettingActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
     <!-- Setting text -->
     <string name="pref_noti_category">Notification</string>
